@@ -51,8 +51,9 @@
 			   
 			}	  
 			 
-			 
-			   var t1;
+			function conversion(u,t){
+			  
+				var t1;
 			   var u1;
 			   
 			   if(u == "F"){
@@ -66,11 +67,17 @@
 					u1 = "Kelvin";
 			   }
 			   
-               $(document).ready(function(){
+			}
+			
+			
+             $(document).ready(function(){
 			$("button").click(function(){
 			   var t = $('#temp').val();//celsius
 			   var u = $('#unit').val();
 			   
+			   var chk = validate(t);
+			   if (chk != null) return chk;
+			   var crs = conversion(u,t);
 
 
 
